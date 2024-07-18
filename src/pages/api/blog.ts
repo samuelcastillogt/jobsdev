@@ -11,13 +11,11 @@ export default async function handler(
   res: NextApiResponse<Data>,
 ) {
   try{
-    const response = await blogService.getAllData("posts")
+    const response:any = await blogService.getAllData("posts")
     console.log(response)
-    res.status(200);
+    res.status(200).send(response);
   }catch(err){
-    console.log(err)
-    
+    console.log(err) 
     res.status(500)
   }
-
 }
